@@ -5,15 +5,16 @@ import { BrowserRouter, BrowserRouter as Router, Route, Routes } from "react-rou
 import { ROUTE_PATH } from './contants/Constants';
 import NotFound from './components/NotFound';
 import CartPage from './components/CartPage';
+import ParentLayout from './layouts/ParentLayout';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path={ROUTE_PATH.PRODUCT_LIST} element={<ProductsList />} />
-          <Route path={ROUTE_PATH.SINGLE_PRODUCT} element={<ProductDetails />} />
-          <Route path={ROUTE_PATH.CART} element={<CartPage />} />
+          <Route path={ROUTE_PATH.PRODUCT_LIST} element={<ParentLayout Component={ProductsList} />} />
+          <Route path={ROUTE_PATH.SINGLE_PRODUCT} element={<ParentLayout Component={ProductDetails} />} />
+          <Route path={ROUTE_PATH.CART} element={<ParentLayout Component={CartPage} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
