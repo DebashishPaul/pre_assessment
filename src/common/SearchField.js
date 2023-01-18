@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { ROUTE_PATH } from '../contants/Constants';
+import Loader from './Loader';
 
 const SearchField = () => {
     const wrapperRef = useRef(null);
@@ -15,6 +16,7 @@ const SearchField = () => {
     const [hasMore, setHasMore] = useState(true);
     const [offset, setOffset] = useState(0);
     const [limit, setLimit] = useState(5);
+    console.log(data, "datadata")
     const handledown = () => {
         setData([]);
         setOffset(0);
@@ -35,10 +37,8 @@ const SearchField = () => {
               console.log("whole: ", res.data);
               console.log("offset: ", offset);
               console.log("limit: ", limit);
-              const newdata = res.data.products;
-              const hasMoreapi = res.data.has_more;
+              const newdata = res.data;
               //console.log("insight axios keyword:",keyword)
-              setHasMore(hasMoreapi);
               setLoading(false);
               setData([...data, ...newdata]);
               // setData([...data, ...newdata])
@@ -107,7 +107,7 @@ const SearchField = () => {
         {data.length > 0 && keyword.length > 1 ? (
         <>
           <div
-            className="autocomplete-items"
+            className="autocomplete-items z-50"
             onScroll={DivScroll}
             ref={wrapperRef}
             style={{ height: "358px", overflowY: "auto" }}
@@ -125,7 +125,7 @@ const SearchField = () => {
                       </div>
                       <div>
                         <span style={{ color: "#BD095A" }}>
-                          {/* {each.product_name} */}
+                          {each.title}
                         </span>
                         <br />
                       </div>
@@ -179,7 +179,7 @@ const SearchField = () => {
           </div>
         </>
       ) : (
-        <></>
+        <Loader />
       )}
         </div>
     )
