@@ -3,7 +3,7 @@ import Navbar from "../common/Navbar";
 
 const ParentLayout = ({ Component }) => {
   return (
-    <div className="flex">
+    <div>
       <Navbar />
       <Component />
     </div>

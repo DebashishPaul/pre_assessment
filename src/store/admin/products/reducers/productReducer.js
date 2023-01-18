@@ -1,10 +1,10 @@
 import {
-  HOTELS_INFO_GET_ERROR,
-  HOTELS_INFO_GET_SUCCESS,
-  HOTELS_INFO_GET_REQUEST,
-  HOTELS_DETAILS_GET_REQUEST,
-  HOTELS_DETAILS_GET_SUCCESS,
-  HOTELS_DETAILS_GET_ERROR,
+  PRODUCT_GET_ERROR,
+  PRODUCT_GET_SUCCESS,
+  PRODUCT_GET_REQUEST,
+  PRODUCT_DETAILS_GET_REQUEST,
+  PRODUCT_DETAILS_GET_SUCCESS,
+  PRODUCT_DETAILS_GET_ERROR,
 } from "../action/actionType";
 
 const initStateProperty = {
@@ -17,23 +17,23 @@ const initStatePropertyDetails ={
   data: [],
   error: "",
 }
-export function hotelsInfoGetReducer(state = initStateProperty, action) {
+export function productGetReducer(state = initStateProperty, action) {
   switch (action.type) {
-    case HOTELS_INFO_GET_REQUEST:
+    case PRODUCT_GET_REQUEST:
       return {
         ...state,
         loading: true,
         // data:[],
         error: "",
       };
-    case HOTELS_INFO_GET_SUCCESS:
+    case PRODUCT_GET_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
         error: "",
       };
-    case HOTELS_INFO_GET_ERROR:
+    case PRODUCT_GET_ERROR:
       return {
         ...state,
         loading: false,
@@ -45,23 +45,23 @@ export function hotelsInfoGetReducer(state = initStateProperty, action) {
   }
 }
 
-export function hotelsInfoDetailsGetReducer(state = initStatePropertyDetails, action) {
+export function productInfoDetailsGetReducer(state = initStatePropertyDetails, action) {
   switch (action.type) {
-    case HOTELS_DETAILS_GET_REQUEST:
+    case PRODUCT_DETAILS_GET_REQUEST:
       return {
         ...state,
         loading: true,
         // data:[],
         error: "",
       };
-    case HOTELS_DETAILS_GET_SUCCESS:
+    case PRODUCT_DETAILS_GET_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
         error: "",
       };
-    case HOTELS_DETAILS_GET_ERROR:
+    case PRODUCT_DETAILS_GET_ERROR:
       return {
         ...state,
         loading: false,

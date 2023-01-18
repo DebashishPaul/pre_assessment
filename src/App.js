@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={ROUTE_PATH.PRODUCT_LIST} element={<ParentLayout Component={ProductsList} />} />
-          <Route path={ROUTE_PATH.SINGLE_PRODUCT} element={<ParentLayout Component={ProductDetails} />} />
+          <Route path={`${ROUTE_PATH.SINGLE_PRODUCT}:id`} element={<ParentLayout Component={ProductDetails} />} />
           <Route path={ROUTE_PATH.CART} element={<ParentLayout Component={CartPage} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

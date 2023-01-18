@@ -7,17 +7,18 @@ import {
   ownerInfoGetReducer,
 } from "./admin/adminContract/reducers/adminContractReducer";
 import { submitReviewReducer } from "./admin/review/reducers/reviewReducer";
-import { hotelsInfoDetailsGetReducer, hotelsInfoGetReducer } from "./admin/hotel/reducers/adminContractReducer";
 import { contractInfoGetReducer } from "./admin/contract/reducers/adminContractReducer";
 
-const rootReducer = combineReducers({
-  adminContractGetReducer: adminContractGetReducer,
+import {productGetReducer, productInfoDetailsGetReducer} from "./admin/products/reducers/productReducer"; //new
 
+const rootReducer = combineReducers({
+  productGetReducer: productGetReducer, //new
+  productInfoDetailsGetReducer: productInfoDetailsGetReducer, //new
+
+  adminContractGetReducer: adminContractGetReducer,
   ownerInfoGetReducer: ownerInfoGetReducer,
   contractInfoGetReducer: contractInfoGetReducer,
   documentsInfoGetReducer: documentsInfoGetReducer,
-  hotelsInfoGetReducer: hotelsInfoGetReducer,
-  hotelsInfoDetailsGetReducer: hotelsInfoDetailsGetReducer,
   categoriesInfoGetReducer: categoriesInfoGetReducer,
   categoriesDetailsGetReducer: categoriesDetailsGetReducer,
   submitReviewReducer: submitReviewReducer,
