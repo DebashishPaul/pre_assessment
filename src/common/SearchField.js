@@ -53,6 +53,9 @@ const SearchField = () => {
           setData([]);
         }
       };
+      const handleSearchClick = (id) => {
+        navigate(ROUTE_PATH.SINGLE_PRODUCT + id)
+      }
       // outside click
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -117,7 +120,7 @@ const SearchField = () => {
                 <>
                   <div key={i}>
                     <div
-                      onClick={() => navigate(ROUTE_PATH.SINGLE_PRODUCT + each.id)}
+                      onClick={() => handleSearchClick(each.id) }
                       className="items_serial"
                     >
                       <div>
