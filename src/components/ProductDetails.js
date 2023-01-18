@@ -17,7 +17,7 @@ const ProductDetails = () => {
     return (
         <div>
             {
-                SingleProductresponse && SingleProductresponse.data ?
+                SingleProductresponse && SingleProductresponse.data && SingleProductresponse.data.rating && SingleProductresponse.data.rating.rate ?
                     <div className="bg-white">
                         <div className="">
                             <nav aria-label="Breadcrumb">
